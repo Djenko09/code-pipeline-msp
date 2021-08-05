@@ -8,7 +8,7 @@ data "aws_ssm_parameter" "AmazonLinuxAmi" {
 resource "aws_key_pair" "master-key" {
   provider   = aws.region-master
   key_name   = "jumpbox"
-  public_key = file("../keys/id_rsa.pub")
+  public_key = file("./keys/id_rsa.pub")
 }
 
 #Create EC2 Jumpbox
