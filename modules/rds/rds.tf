@@ -10,7 +10,7 @@ data "aws_db_snapshot" "latest_prod_snapshot" {
 resource "aws_db_instance" "LojaOnline" {
   identifier = "lojaonline"
   provider             = aws.region-master
-  instance_class       = "db.t2.micro"
+  instance_class       = "db.t3.small"
   db_subnet_group_name = var.subnetgroup
   snapshot_identifier  = data.aws_db_snapshot.latest_prod_snapshot.id
   skip_final_snapshot  = true
@@ -24,7 +24,7 @@ resource "aws_db_instance" "LojaOnline" {
 resource "aws_db_instance" "crrds" {
   identifier = "crrds"
   provider             = aws.region-master
-  instance_class       = "db.t2.micro"
+  instance_class       = "db.t3.small"
   db_subnet_group_name = var.subnetgroup
   snapshot_identifier  = data.aws_db_snapshot.latest_prod_snapshot.id
   skip_final_snapshot  = true
