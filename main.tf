@@ -87,8 +87,8 @@ module "loadbalancer" {
 # RDS 
 ######################################
 
-module "rds" {
-  source      = "./modules/rds"
-  subnetgroup = module.subnets.subnet_group
-}
+#module "rds" {
+ # source      = "./modules/rds"
+  #subnetgroup = module.subnets.subnet_group
+#}
 
